@@ -7,10 +7,10 @@ Yet another YouTube downloading module. Written with only Javascript and a node-
 
 ```js
 const fs = require('fs');
-const ytdl = require('ytdl-core');
-// TypeScript: import ytdl from 'ytdl-core'; with --esModuleInterop
-// TypeScript: import * as ytdl from 'ytdl-core'; with --allowSyntheticDefaultImports
-// TypeScript: import ytdl = require('ytdl-core'); with neither of the above
+const ytdl = require('better-ytdl-core');
+// TypeScript: import ytdl from 'better-ytdl-core'; with --esModuleInterop
+// TypeScript: import * as ytdl from 'better-ytdl-core'; with --allowSyntheticDefaultImports
+// TypeScript: import ytdl = require('better-ytdl-core'); with neither of the above
 
 ytdl('http://www.youtube.com/watch?v=aqz-KE-bpKQ')
   .pipe(fs.createWriteStream('video.mp4'));
@@ -153,7 +153,7 @@ Generated download links are valid for 6 hours, and may only be downloadable fro
 
 ### Ratelimits
 When doing to many requests YouTube might block. This will result in your requests getting denied with HTTP-StatusCode 429. The following Steps might help you:
-* Update ytdl-core to the latest version
+* Update better-ytdl-core to the latest version
 * Use proxies (you can find an example [here](https://github.com/fent/node-ytdl-core/blob/master/example/proxy.js))
 * Extend on the Proxy Idea by rotating (IPv6-)Addresses
   * read [this](#How-does-using-an-IPv6-block-help?) for more information about this
@@ -177,7 +177,7 @@ Typically 1080p or better videos do not have audio encoded with it. The audio mu
 
 YouTube updates their website all the time, it's not that rare for this to stop working. If it doesn't work for you and you're using the latest version, feel free to open up an issue. Make sure to check if there isn't one already with the same error.
 
-Run the tests at `test/irl-test.js` to make sure this is really an issue with ytdl-core.
+Run the tests at `test/irl-test.js` to make sure this is really an issue with better-ytdl-core.
 
     npm run test:irl
 
@@ -194,35 +194,7 @@ Or for Yarn users:
 yarn add ytdl-core@latest
 ```
 
-Make sure you're installing the latest version of ytdl-core to keep up with the latest fixes.
-
-If you're using a bot or app that uses ytdl-core such as [ytdl-core-discord](https://github.com/amishshah/ytdl-core-discord) or [discord-player](https://github.com/Androz2091/discord-player), it may be dependent on an older version. To update its ytdl-core version, that library has to update its `package.json` file, you can't simply change the version on your project's `package.json`, the app will still use its own older version of ytdl-core.
-
-Look in their repo to see if they already have an active pull request that updates ytdl-core. If they don't, open an issue asking them to update ytdl-core, or better yet, fork the project and submit a pull request with the updated version.
-
-While you wait for the pull reques to merge, you can point to its branch in your `package.json`
-
-```json
-  "ytdl-core-discord": "amishshah/ytdl-core-discord#dependabot/npm_and_yarn/ytdl-core-2.0.1"
-```
-
-## Update Checks
-
-The issue of using an outdated version of ytdl-core became so prevalent, that ytdl-core now checks for updates at run time, and every 12 hours. If it finds an update, it will print a warning to the console advising you to update. Due to the nature of this library, it is important to always use the latest version as YouTube continues to update.
-
-If you'd like to disable this update check, you can do so by providing the `YTDL_NO_UPDATE` env variable.
-
-```
-env YTDL_NO_UPDATE=1 node myapp.js
-```
-
-# Related Projects
-
-- [ytdl](https://github.com/fent/node-ytdl) - A cli wrapper of this.
-- [pully](https://github.com/JimmyBoh/pully) - Another cli wrapper of this aimed at high quality formats.
-- [ytsr](https://github.com/TimeForANinja/node-ytsr) - YouTube video search results.
-- [ytpl](https://github.com/TimeForANinja/node-ytpl) - YouTube playlist and channel resolver.
-
+Make sure you're installing the latest version of better-ytdl-core to keep up with the latest fixes.
 
 # Tests
 Tests are written with [mocha](https://mochajs.org)
