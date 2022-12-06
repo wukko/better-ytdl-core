@@ -1,4 +1,5 @@
-# node-ytdl-core
+# better-ytdl-core
+Based on [ytdl-core by fent](https://github.com/fent/node-ytdl-core). This fork aims to improve on the original module, since that one seems to have been adbandoned.
 
 Yet another YouTube downloading module. Written with only Javascript and a node-friendly streaming interface.
 

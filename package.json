@@ -1,6 +1,6 @@
 {
-  "name": "ytdl-core",
-  "description": "YouTube video downloader in pure javascript.",
+  "name": "better-ytdl-core",
+  "description": "Fork of YouTube video downloader in pure javascript that aims to improve on it. Based on ytdl-core by fent.",
   "keywords": [
     "youtube",
     "video",
@@ -9,10 +9,11 @@
   "version": "0.0.0-development",
   "repository": {
     "type": "git",
-    "url": "git://github.com/fent/node-ytdl-core.git"
+    "url": "git://github.com/wukko/better-ytdl-core"
   },
   "author": "fent <fentbox@gmail.com> (https://github.com/fent)",
   "contributors": [
+    "fent (https://github.com/fent)",
     "Tobias Kutscha (https://github.com/TimeForANinja)",
     "Andrew Kelley (https://github.com/andrewrk)",
     "Mauricio Allende (https://github.com/mallendeo)",
